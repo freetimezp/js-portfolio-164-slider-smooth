@@ -3,7 +3,6 @@
     margin: 0;
     box-sizing: border-box;
     list-style: none;
-    list-style-type: none;
 }
 
 a {
@@ -12,19 +11,20 @@ a {
 
 html, body {
     width: 100vw;
-    height: 1000vh;
+    height: 1000vh; /* Large height for scroll testing */
     background: #000;
+    overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
 ::-webkit-scrollbar {
-    display: none;
+    display: none; /* Hide scrollbar */
 }
 
 img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform .1s ease-out;
+    transition: transform 0.3s ease-out; /* Smooth scaling */
 }
 
 p {
@@ -42,6 +42,7 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 10; /* Ensure visibility over the slider */
 }
 
 nav {
@@ -56,41 +57,17 @@ footer {
     position: fixed;
     top: 0;
     left: 0;
-    width: 500%;
     height: 100vh;
     display: flex;
-    justify-content: space-around;
+    gap: 10px;
     align-items: center;
+    width: max-content; /* Dynamically adjusts width */
+    transform: translateX(0); /* Initial position */
 }
 
 .card {
     width: 400px;
     height: 500px;
-    transition: transform .1s ease-out;
     overflow: hidden;
+    transition: transform 0.3s ease-out; /* Smooth scaling */
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
